@@ -71,6 +71,9 @@ h2 { color: var(--lobster-dark); border-bottom: 1px solid var(--sand-deep); padd
 h3 { color: var(--navy-light); font-size: 19px; }
 h4 { color: var(--seaweed); font-style: italic; font-size: 16px; }
 a { color: var(--lobster-dark); }
+.must-item .name a, .steal-box h4 a, .inst-card .name a, .schedule-content .activity a { color: inherit; text-decoration: underline; text-decoration-color: rgba(200, 78, 58, 0.4); text-underline-offset: 3px; }
+.must-item .name a:hover, .steal-box h4 a:hover, .inst-card .name a:hover, .schedule-content .activity a:hover { text-decoration-color: var(--lobster); }
+.schedule-content .detail a { color: var(--lobster-dark); }
 strong { color: var(--navy); }
 em { color: var(--seaweed); }
 
@@ -441,32 +444,32 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 <h2>Les 5 incontournables (avec le pourquoi)</h2>
 
 <div class="must-item">
-  <span class="num">1</span><span class="name">Lincolnville Beach</span><span class="when">dim pm ou lun am · 4h+</span>
+  <span class="num">1</span><span class="name"><a href="https://maps.google.com/?q=Lincolnville+Beach+Maine" target="_blank" rel="noopener">Lincolnville Beach</a></span><span class="when">dim pm ou lun am · 4h+</span>
   <div class="why">L'objectif principal du voyage. Plage sable + galets, slope graduel, eau calme protégée par l'île d'Islesboro. <span class="name-mika">Mika</span> &amp; <span class="name-luce">Luce</span> peuvent jouer dans le sable en sécurité, <span class="name-yannick">Yannick</span> et <span class="name-patricia">Patricia</span> peuvent lire/relaxer. 15 min de Seascape, GRATUIT, Google 4.7/5.</div>
 </div>
 
 <div class="must-item">
-  <span class="num">2</span><span class="name">Belfast City Park playground</span><span class="when">lundi matin · 2h</span>
+  <span class="num">2</span><span class="name"><a href="https://maps.google.com/?q=Belfast+City+Park+Maine" target="_blank" rel="noopener">Belfast City Park playground</a></span><span class="when">lundi matin · 2h</span>
   <div class="why">Le meilleur playground du Maine selon TripAdvisor. Toddler playground séparé, sécuritaire, long hillside slide, 17.5 acres waterfront, GRATUIT. À 10 min de Seascape.</div>
 </div>
 
 <div class="must-item">
-  <span class="num">3</span><span class="name">Moody's Diner — Waldoboro</span><span class="when">samedi lunch</span>
+  <span class="num">3</span><span class="name"><a href="https://maps.google.com/?q=Moody's+Diner+Waldoboro+Maine" target="_blank" rel="noopener">Moody's Diner — Waldoboro</a></span><span class="when">samedi lunch</span>
   <div class="why">Institution familiale depuis 1927, 4 générations de Moody, Down East Best Diner Maine 2025 (Google 4.5/5). Booth en vinyle rouge années 50, Yankee pot roast, doughnuts maison.</div>
 </div>
 
 <div class="must-item">
-  <span class="num">4</span><span class="name">WW&amp;F Railway WWI Reenactment</span><span class="when">samedi 11h-13h30</span>
+  <span class="num">4</span><span class="name"><a href="https://maps.google.com/?q=WW%26F+Railway+Museum+Alna+Maine" target="_blank" rel="noopener">WW&amp;F Railway WWI Reenactment</a></span><span class="when">samedi 11h-13h30</span>
   <div class="why"><span class="name-joseph">Joseph</span> va capoter. Train à vapeur narrow-gauge (60cm — quasi-unique aux États-Unis) + campement WWI reconstitué. Le kitsch authentique qu'on trouve nulle part ailleurs en Amérique du Nord.</div>
 </div>
 
 <div class="must-item">
-  <span class="num">5</span><span class="name">Marshall Wharf Brewing</span><span class="when">samedi soir</span>
+  <span class="num">5</span><span class="name"><a href="https://maps.google.com/?q=Marshall+Wharf+Brewing+Belfast+Maine" target="_blank" rel="noopener">Marshall Wharf Brewing</a></span><span class="when">samedi soir</span>
   <div class="why">Bâtiment 1890 (ancien grenier de ville) sur Belfast Bay, outdoor beer atrium (couvert si pluie), huîtres Pemaquid fraîches ($3 chaque vs $8 à NYC), 30+ bières craft.</div>
 </div>
 
 <div class="callout">
-  <p style="margin: 0;"><strong>Tout le reste = suggestions.</strong> Mount Battie, Cellardoor Winery, Round Top Ice Cream, Perry's Nut House, Beth's Farm Market, Pemaquid — bonus si beau et énergie. Sinon : <strong>plage + playground + repas légendaires = mission accomplie</strong>.</p>
+  <p style="margin: 0;"><strong>Tout le reste = suggestions.</strong> <a href="https://maps.google.com/?q=Mount+Battie+Camden+Maine" target="_blank" rel="noopener">Mount Battie</a>, <a href="https://maps.google.com/?q=Cellardoor+Winery+Lincolnville+Maine" target="_blank" rel="noopener">Cellardoor Winery</a>, <a href="https://maps.google.com/?q=Round+Top+Ice+Cream+Damariscotta+Maine" target="_blank" rel="noopener">Round Top Ice Cream</a>, <a href="https://maps.google.com/?q=Perry's+Nut+House+Belfast+Maine" target="_blank" rel="noopener">Perry's Nut House</a>, <a href="https://maps.google.com/?q=Beth's+Farm+Market+Warren+Maine" target="_blank" rel="noopener">Beth's Farm Market</a>, <a href="https://maps.google.com/?q=Pemaquid+Point+Maine" target="_blank" rel="noopener">Pemaquid</a> — bonus si beau et énergie. Sinon : <strong>plage + playground + repas légendaires = mission accomplie</strong>.</p>
 </div>
 
 <!-- TOC -->
@@ -494,13 +497,13 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 
 <div class="schedule-block"><div class="schedule-time">4h00</div><div class="schedule-content"><span class="activity">Départ Québec via Jackman</span><div class="detail"><span class="name-yannick">Yannick</span> au volant. <span class="name-mika">Mika</span> &amp; <span class="name-luce">Luce</span> dans sièges d'auto.</div></div></div>
 <div class="schedule-block"><div class="schedule-time">6h30</div><div class="schedule-content"><span class="activity">Frontière US à Jackman</span></div></div>
-<div class="schedule-block food"><div class="schedule-time">8h30-9h30</div><div class="schedule-content"><span class="activity">Petit-déj Skowhegan ou Hallowell</span><div class="detail">The Liberal Cup (Hallowell) ou Heritage House (Skowhegan).</div></div></div>
-<div class="schedule-block highlight activity"><div class="schedule-time">11h-13h30</div><div class="schedule-content"><span class="activity">★ WW&amp;F Railway WWI Reenactment — Alna</span><div class="detail">97 Cross Road. Train à vapeur narrow-gauge + campement reconstitué. Apporter coats imperméables.</div></div></div>
-<div class="schedule-block highlight food"><div class="schedule-time">14h-15h30</div><div class="schedule-content"><span class="activity">★ LUNCH MOODY'S DINER</span><div class="detail">Google 4.5/5 · 1927 · Yankee pot roast + wild blueberry pie.</div></div></div>
-<div class="schedule-block food"><div class="schedule-time">15h30-16h</div><div class="schedule-content"><span class="activity">Round Top Ice Cream — Damariscotta</span><div class="detail">Google 4.6/5 · 1924 · 101 ans d'institution.</div></div></div>
-<div class="schedule-block"><div class="schedule-time">16h-16h30</div><div class="schedule-content"><span class="activity">Pemaquid Lobster &amp; Seafood (optionnel)</span><div class="detail">Pour crab meat + huîtres dans glacière.</div></div></div>
-<div class="schedule-block"><div class="schedule-time">18h00</div><div class="schedule-content"><span class="activity">Check-in Seascape</span></div></div>
-<div class="schedule-block highlight food"><div class="schedule-time">18h30-20h30</div><div class="schedule-content"><span class="activity">★ Souper Marshall Wharf Brewing</span><div class="detail">Huîtres Pemaquid + bières + live music sous l'atrium couvert. Bâtiment 1890.</div></div></div>
+<div class="schedule-block food"><div class="schedule-time">8h30-9h30</div><div class="schedule-content"><span class="activity">Petit-déj Skowhegan ou Hallowell</span><div class="detail"><a href="https://maps.google.com/?q=The+Liberal+Cup+Hallowell+Maine" target="_blank" rel="noopener">The Liberal Cup</a> (Hallowell) ou <a href="https://maps.google.com/?q=Heritage+House+Restaurant+Skowhegan+Maine" target="_blank" rel="noopener">Heritage House</a> (Skowhegan).</div></div></div>
+<div class="schedule-block highlight activity"><div class="schedule-time">11h-13h30</div><div class="schedule-content"><span class="activity">★ <a href="https://maps.google.com/?q=WW%26F+Railway+Museum+Alna+Maine" target="_blank" rel="noopener">WW&amp;F Railway WWI Reenactment — Alna</a></span><div class="detail">97 Cross Road. Train à vapeur narrow-gauge + campement reconstitué. Apporter coats imperméables.</div></div></div>
+<div class="schedule-block highlight food"><div class="schedule-time">14h-15h30</div><div class="schedule-content"><span class="activity">★ <a href="https://maps.google.com/?q=Moody's+Diner+Waldoboro+Maine" target="_blank" rel="noopener">LUNCH MOODY'S DINER</a></span><div class="detail">Google 4.5/5 · 1927 · Yankee pot roast + wild blueberry pie.</div></div></div>
+<div class="schedule-block food"><div class="schedule-time">15h30-16h</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Round+Top+Ice+Cream+Damariscotta+Maine" target="_blank" rel="noopener">Round Top Ice Cream — Damariscotta</a></span><div class="detail">Google 4.6/5 · 1924 · 101 ans d'institution.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">16h-16h30</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Pemaquid+Lobster+Co-op+Maine" target="_blank" rel="noopener">Pemaquid Lobster &amp; Seafood (optionnel)</a></span><div class="detail">Pour crab meat + huîtres dans glacière.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">18h00</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Seascape+Motel+%26+Cottages+Belfast+Maine" target="_blank" rel="noopener">Check-in Seascape</a></span></div></div>
+<div class="schedule-block highlight food"><div class="schedule-time">18h30-20h30</div><div class="schedule-content"><span class="activity">★ <a href="https://maps.google.com/?q=Marshall+Wharf+Brewing+Belfast+Maine" target="_blank" rel="noopener">Souper Marshall Wharf Brewing</a></span><div class="detail">Huîtres Pemaquid + bières + live music sous l'atrium couvert. Bâtiment 1890.</div></div></div>
 
 </div>
 </div>
@@ -510,12 +513,12 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 <div class="day-body">
 
 <div class="schedule-block food"><div class="schedule-time">8h-9h</div><div class="schedule-content"><span class="activity">Petit-déj cottage vue océan</span></div></div>
-<div class="schedule-block activity"><div class="schedule-time">10h-11h30</div><div class="schedule-content"><span class="activity">Mount Battie Auto Road — Camden</span><div class="detail">$6 USD/ad · panoramic 360° Penobscot Bay · Google 4.8/5.</div></div></div>
-<div class="schedule-block food"><div class="schedule-time">11h30-12h30</div><div class="schedule-content"><span class="activity">Lunch picnic à emporter</span><div class="detail">Camden Deli — sandwiches à manger sur la plage.</div></div></div>
-<div class="schedule-block"><div class="schedule-time">12h30-13h</div><div class="schedule-content"><span class="activity">Drive Camden → Lincolnville (15 min)</span><div class="detail">Arrêt rapide State of Maine Cheese (Rockport).</div></div></div>
-<div class="schedule-block highlight beach"><div class="schedule-time">13h-17h</div><div class="schedule-content"><span class="activity">★★ LINCOLNVILLE BEACH — 4 HEURES</span><div class="detail"><strong>Le moment phare.</strong> Sable + galets · Google 4.7/5 · GRATUIT. Picnic, sable pour les filles, lecture pour les parents.</div></div></div>
-<div class="schedule-block activity"><div class="schedule-time">17h-17h45</div><div class="schedule-content"><span class="activity">Cellardoor Winery (optionnel)</span><div class="detail">Barn 1790 · Google 4.6/5 · giant chess pieces.</div></div></div>
-<div class="schedule-block food"><div class="schedule-time">19h-20h30</div><div class="schedule-content"><span class="activity">Souper McLaughlin's OU cottage</span></div></div>
+<div class="schedule-block activity"><div class="schedule-time">10h-11h30</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Mount+Battie+Auto+Road+Camden+Maine" target="_blank" rel="noopener">Mount Battie Auto Road — Camden</a></span><div class="detail">$6 USD/ad · panoramic 360° Penobscot Bay · Google 4.8/5.</div></div></div>
+<div class="schedule-block food"><div class="schedule-time">11h30-12h30</div><div class="schedule-content"><span class="activity">Lunch picnic à emporter</span><div class="detail"><a href="https://maps.google.com/?q=Camden+Deli+Camden+Maine" target="_blank" rel="noopener">Camden Deli</a> — sandwiches à manger sur la plage.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">12h30-13h</div><div class="schedule-content"><span class="activity">Drive Camden → Lincolnville (15 min)</span><div class="detail">Arrêt rapide <a href="https://maps.google.com/?q=State+of+Maine+Cheese+Rockport+Maine" target="_blank" rel="noopener">State of Maine Cheese</a> (Rockport).</div></div></div>
+<div class="schedule-block highlight beach"><div class="schedule-time">13h-17h</div><div class="schedule-content"><span class="activity">★★ <a href="https://maps.google.com/?q=Lincolnville+Beach+Maine" target="_blank" rel="noopener">LINCOLNVILLE BEACH — 4 HEURES</a></span><div class="detail"><strong>Le moment phare.</strong> Sable + galets · Google 4.7/5 · GRATUIT. Picnic, sable pour les filles, lecture pour les parents.</div></div></div>
+<div class="schedule-block activity"><div class="schedule-time">17h-17h45</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Cellardoor+Winery+Lincolnville+Maine" target="_blank" rel="noopener">Cellardoor Winery (optionnel)</a></span><div class="detail">Barn 1790 · Google 4.6/5 · giant chess pieces.</div></div></div>
+<div class="schedule-block food"><div class="schedule-time">19h-20h30</div><div class="schedule-content"><span class="activity">Souper <a href="https://maps.google.com/?q=McLaughlin's+Lobster+Shack+Lincolnville+Maine" target="_blank" rel="noopener">McLaughlin's</a> OU cottage</span></div></div>
 
 </div>
 </div>
@@ -525,12 +528,12 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 <div class="day-body">
 
 <div class="schedule-block food"><div class="schedule-time">8h-9h</div><div class="schedule-content"><span class="activity">Petit-déj cottage · pack up</span></div></div>
-<div class="schedule-block"><div class="schedule-time">9h-9h45</div><div class="schedule-content"><span class="activity">Moose Point State Park</span><div class="detail">Dernière marche océan.</div></div></div>
-<div class="schedule-block highlight beach"><div class="schedule-time">10h-12h</div><div class="schedule-content"><span class="activity">★★ BELFAST CITY PARK — 2H PLAYGROUND</span><div class="detail">Google 4.7/5 · établi 1904 · playground TODDLER séparé · long hillside slide · GRATUIT.</div></div></div>
-<div class="schedule-block activity"><div class="schedule-time">12h-12h30</div><div class="schedule-content"><span class="activity">Perry's Nut House (5 min)</span><div class="detail">1927 · Cabinet of Curiosities · fudge maison.</div></div></div>
-<div class="schedule-block"><div class="schedule-time">13h</div><div class="schedule-content"><span class="activity">Check-out Seascape</span></div></div>
-<div class="schedule-block highlight activity"><div class="schedule-time">13h30-14h15</div><div class="schedule-content"><span class="activity">Beth's Farm Market — Warren (1929)</span></div></div>
-<div class="schedule-block food"><div class="schedule-time">14h30-15h30</div><div class="schedule-content"><span class="activity">Lunch Damariscotta</span><div class="detail">Reilly's Bakery (whoopie pies) ou King Eider's Pub.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">9h-9h45</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Moose+Point+State+Park+Maine" target="_blank" rel="noopener">Moose Point State Park</a></span><div class="detail">Dernière marche océan.</div></div></div>
+<div class="schedule-block highlight beach"><div class="schedule-time">10h-12h</div><div class="schedule-content"><span class="activity">★★ <a href="https://maps.google.com/?q=Belfast+City+Park+Maine" target="_blank" rel="noopener">BELFAST CITY PARK — 2H PLAYGROUND</a></span><div class="detail">Google 4.7/5 · établi 1904 · playground TODDLER séparé · long hillside slide · GRATUIT.</div></div></div>
+<div class="schedule-block activity"><div class="schedule-time">12h-12h30</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Perry's+Nut+House+Belfast+Maine" target="_blank" rel="noopener">Perry's Nut House (5 min)</a></span><div class="detail">1927 · Cabinet of Curiosities · fudge maison.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">13h</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Seascape+Motel+%26+Cottages+Belfast+Maine" target="_blank" rel="noopener">Check-out Seascape</a></span></div></div>
+<div class="schedule-block highlight activity"><div class="schedule-time">13h30-14h15</div><div class="schedule-content"><span class="activity"><a href="https://maps.google.com/?q=Beth's+Farm+Market+Warren+Maine" target="_blank" rel="noopener">Beth's Farm Market — Warren (1929)</a></span></div></div>
+<div class="schedule-block food"><div class="schedule-time">14h30-15h30</div><div class="schedule-content"><span class="activity">Lunch Damariscotta</span><div class="detail"><a href="https://maps.google.com/?q=Reilly's+Bakery+Damariscotta+Maine" target="_blank" rel="noopener">Reilly's Bakery</a> (whoopie pies) ou <a href="https://maps.google.com/?q=King+Eider's+Pub+Damariscotta+Maine" target="_blank" rel="noopener">King Eider's Pub</a>.</div></div></div>
 <div class="schedule-block"><div class="schedule-time">~20h</div><div class="schedule-content"><span class="activity">Arrivée Québec</span></div></div>
 
 </div>
@@ -541,7 +544,7 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 
 <div class="steal-box">
   <span class="label">COUP DE CŒUR</span>
-  <h4>Lincolnville Beach</h4>
+  <h4><a href="https://maps.google.com/?q=Lincolnville+Beach+Maine" target="_blank" rel="noopener">Lincolnville Beach</a></h4>
   <span class="price">GRATUIT</span>
   <div class="rating-line">Google ⭐ 4.7/5 · sable + galets · slope graduel · eau calme</div>
   <p>4h de plage avec parking gratuit · objectif #1 du voyage.</p>
@@ -549,7 +552,7 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 
 <div class="steal-box">
   <span class="label">COUP DE CŒUR</span>
-  <h4>Belfast City Park (1904)</h4>
+  <h4><a href="https://maps.google.com/?q=Belfast+City+Park+Maine" target="_blank" rel="noopener">Belfast City Park (1904)</a></h4>
   <span class="price">GRATUIT</span>
   <div class="rating-line">Google ⭐ 4.7/5 · 17.5 acres waterfront · long hillside slide</div>
   <p>Meilleur playground du Maine selon TripAdvisor.</p>
@@ -557,7 +560,7 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 
 <div class="steal-box">
   <span class="label">COUP DE CŒUR</span>
-  <h4>Mount Battie Auto Road — Camden</h4>
+  <h4><a href="https://maps.google.com/?q=Mount+Battie+Auto+Road+Camden+Maine" target="_blank" rel="noopener">Mount Battie Auto Road — Camden</a></h4>
   <span class="price">$6 USD / adulte</span>
   <div class="rating-line">Google ⭐ 4.8/5 · panoramic 360° Penobscot Bay</div>
   <p>Vue qu'à Manhattan tu paierais $50.</p>
@@ -565,7 +568,7 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 
 <div class="steal-box">
   <span class="label">COUP DE CŒUR</span>
-  <h4>Moody's Diner (1927)</h4>
+  <h4><a href="https://maps.google.com/?q=Moody's+Diner+Waldoboro+Maine" target="_blank" rel="noopener">Moody's Diner (1927)</a></h4>
   <span class="price">$10-15 / plat</span>
   <div class="rating-line">Google ⭐ 4.5/5 · Down East Best Diner Maine 2025</div>
   <p>Lunch famille 5 pour ~$60 dans une institution centenaire.</p>
@@ -573,7 +576,7 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 
 <div class="steal-box">
   <span class="label">COUP DE CŒUR</span>
-  <h4>Round Top Ice Cream (1924)</h4>
+  <h4><a href="https://maps.google.com/?q=Round+Top+Ice+Cream+Damariscotta+Maine" target="_blank" rel="noopener">Round Top Ice Cream (1924)</a></h4>
   <span class="price">$4-6 / cône</span>
   <div class="rating-line">Google ⭐ 4.6/5 · 101 ans · "A Maine Icon"</div>
   <p>Tu manges la même recette qu'un client de 1925.</p>
@@ -623,27 +626,27 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 <p><span class="name-joseph">Joseph</span> a aimé Fun-O-Rama à York Beach. Équivalents accessibles depuis Belfast :</p>
 
 <div class="inst-card">
-  <div class="name">ALLPLaY Family Entertainment Center — Belfast</div>
+  <div class="name"><a href="https://maps.google.com/?q=AllPlay+Belfast+Maine" target="_blank" rel="noopener">ALLPLaY Family Entertainment Center — Belfast</a></div>
   <div class="tagline">2 min en char de Seascape. Centre intérieur · arcade · soft play. <strong>Plan B parfait si pluie samedi soir</strong>.</div>
 </div>
 <div class="inst-card">
-  <div class="name">Belfast City Park — long hillside slide</div>
+  <div class="name"><a href="https://maps.google.com/?q=Belfast+City+Park+Maine" target="_blank" rel="noopener">Belfast City Park — long hillside slide</a></div>
   <div class="tagline">Le playground a une longue glissade en flanc de colline.</div>
 </div>
 <div class="inst-card">
-  <div class="name">Mount Battie Auto Road</div>
+  <div class="name"><a href="https://maps.google.com/?q=Mount+Battie+Auto+Road+Camden+Maine" target="_blank" rel="noopener">Mount Battie Auto Road</a></div>
   <div class="tagline">Tour mémorial WWI 1921 à grimper. Photos panoramiques.</div>
 </div>
 <div class="inst-card">
-  <div class="name">Perry's Nut House</div>
+  <div class="name"><a href="https://maps.google.com/?q=Perry's+Nut+House+Belfast+Maine" target="_blank" rel="noopener">Perry's Nut House</a></div>
   <div class="tagline">Cabinet de Curiosités 1927. <span class="name-joseph">Joseph</span> va trouver ça "weirdly cool".</div>
 </div>
 <div class="inst-card">
-  <div class="name">WW&amp;F Railway WWI Reenactment</div>
+  <div class="name"><a href="https://maps.google.com/?q=WW%26F+Railway+Museum+Alna+Maine" target="_blank" rel="noopener">WW&amp;F Railway WWI Reenactment</a></div>
   <div class="tagline">Train à vapeur + campement militaire reconstitué.</div>
 </div>
 <div class="inst-card">
-  <div class="name">Cellardoor Winery — giant chess pieces</div>
+  <div class="name"><a href="https://maps.google.com/?q=Cellardoor+Winery+Lincolnville+Maine" target="_blank" rel="noopener">Cellardoor Winery — giant chess pieces</a></div>
   <div class="tagline">Pendant que les parents font le tasting.</div>
 </div>
 
@@ -651,41 +654,41 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 <h2 id="institutions">Institutions Mainers (notes Google)</h2>
 
 <div class="inst-card">
-  <div class="name">Moody's Diner <span class="year">· 1927</span></div>
+  <div class="name"><a href="https://maps.google.com/?q=Moody's+Diner+Waldoboro+Maine" target="_blank" rel="noopener">Moody's Diner</a> <span class="year">· 1927</span></div>
   <div class="tagline">Waldoboro · Yankee pot roast, doughnuts</div>
   <div class="rating-line">Google ⭐ 4.5/5 · #1 of 12 Waldoboro · Best Diner Maine 2025</div>
 </div>
 <div class="inst-card">
-  <div class="name">Round Top Ice Cream <span class="year">· 1924</span></div>
+  <div class="name"><a href="https://maps.google.com/?q=Round+Top+Ice+Cream+Damariscotta+Maine" target="_blank" rel="noopener">Round Top Ice Cream</a> <span class="year">· 1924</span></div>
   <div class="tagline">Damariscotta · 50+ saveurs maison</div>
   <div class="rating-line">Google ⭐ 4.6/5 · "A Maine Icon"</div>
 </div>
 <div class="inst-card">
-  <div class="name">McLaughlin's Lobster Shack <span class="year">· 1956</span></div>
+  <div class="name"><a href="https://maps.google.com/?q=McLaughlin's+Lobster+Shack+Lincolnville+Maine" target="_blank" rel="noopener">McLaughlin's Lobster Shack</a> <span class="year">· 1956</span></div>
   <div class="tagline">Lincolnville Beach · best haddock sandwich Maine</div>
   <div class="rating-line">Google ⭐ 4.2/5</div>
 </div>
 <div class="inst-card">
-  <div class="name">Marshall Wharf Brewing</div>
+  <div class="name"><a href="https://maps.google.com/?q=Marshall+Wharf+Brewing+Belfast+Maine" target="_blank" rel="noopener">Marshall Wharf Brewing</a></div>
   <div class="tagline">Belfast waterfront · bâtiment 1890</div>
   <div class="rating-line">Google ⭐ 4.2/5</div>
 </div>
 <div class="inst-card">
-  <div class="name">Cellardoor Winery</div>
+  <div class="name"><a href="https://maps.google.com/?q=Cellardoor+Winery+Lincolnville+Maine" target="_blank" rel="noopener">Cellardoor Winery</a></div>
   <div class="tagline">Lincolnville · barn 1790 · family-friendly</div>
   <div class="rating-line">Google ⭐ 4.6/5 · OpenTable 4.9/5</div>
 </div>
 <div class="inst-card">
-  <div class="name">Beth's Farm Market <span class="year">· 1929</span></div>
+  <div class="name"><a href="https://maps.google.com/?q=Beth's+Farm+Market+Warren+Maine" target="_blank" rel="noopener">Beth's Farm Market</a> <span class="year">· 1929</span></div>
   <div class="tagline">Warren · berries, fudge, jams</div>
 </div>
 <div class="inst-card">
-  <div class="name">Perry's Nut House <span class="year">· 1927</span></div>
+  <div class="name"><a href="https://maps.google.com/?q=Perry's+Nut+House+Belfast+Maine" target="_blank" rel="noopener">Perry's Nut House</a> <span class="year">· 1927</span></div>
   <div class="tagline">Belfast · Cabinet of Curiosities</div>
 </div>
 
 <div class="warning-box">
-  <strong>⚠ Marriner's Camden</strong> (Google 4.1/5) : changement de propriétaire récent, Yelp indique fermé. <strong>Appeler 207-236-4949 avant.</strong>
+  <strong>⚠ <a href="https://maps.google.com/?q=Marriner's+Restaurant+Camden+Maine" target="_blank" rel="noopener">Marriner's Camden</a></strong> (Google 4.1/5) : changement de propriétaire récent, Yelp indique fermé. <strong>Appeler <a href="tel:+12072364949">207-236-4949</a> avant.</strong>
 </div>
 
 <!-- CHECKLIST -->
@@ -708,8 +711,8 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 
 <h3>À faire avant départ</h3>
 <div class="checklist">
-<span class="check-item">Appeler Seascape (207-338-2153) pour confirmer BBQ</span>
-<span class="check-item">Vérifier météo vendredi 15 mai (weather.gov)</span>
+<span class="check-item">Appeler <a href="https://maps.google.com/?q=Seascape+Motel+%26+Cottages+Belfast+Maine" target="_blank" rel="noopener">Seascape</a> (<a href="tel:+12073382153">207-338-2153</a>) pour confirmer BBQ</span>
+<span class="check-item">Vérifier météo vendredi 15 mai (<a href="https://forecast.weather.gov/MapClick.php?lat=44.4258&lon=-69.0269" target="_blank" rel="noopener">weather.gov</a>)</span>
 <span class="check-item">Plein d'essence vendredi soir</span>
 <span class="check-item">Préparer kit collations + thermos café</span>
 <span class="check-item">Visionner "In the Bedroom" (Mt. Battie!)</span>
