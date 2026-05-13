@@ -106,6 +106,14 @@ em { color: var(--seaweed); }
   font-size: 12px;
   margin-bottom: 10px;
 }
+.weather-banner .weather-stamp {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--navy);
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
 .weather-banner table { width: 100%; border-collapse: collapse; background: white; margin-top: 10px; }
 .weather-banner th, .weather-banner td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--sand-deep); font-size: 14px; }
 .weather-banner th { background: var(--lobster); color: white; }
@@ -429,6 +437,7 @@ body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-selec
 <div class="weather-banner">
   <h3>Météo — mise à jour automatique</h3>
   <span class="auto-update"><!-- AUTO_UPDATE_BADGE_START -->Auto-update toutes les 4h jusqu'au 18 mai<!-- AUTO_UPDATE_BADGE_END --></span>
+  <div class="weather-stamp"><!-- LAST_UPDATE_START -->Mise a jour Mer 13 mai 16h01 EDT<!-- LAST_UPDATE_END --></div>
   <!-- WEATHER_TABLE_START -->
 <table>
 <tr><th>Jour</th><th>Conditions</th><th>Jour (°C)</th><th>Nuit (°C)</th><th>Précip</th></tr>
