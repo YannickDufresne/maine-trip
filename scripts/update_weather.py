@@ -240,12 +240,20 @@ def update_html(table_html):
     # Use US Eastern Time which is what people care about for Maine forecasts
     eastern = timezone(timedelta(hours=-4))  # EDT
     now = datetime.now(eastern)
-    update_label = f"Météo mise à jour {now.strftime('%a %d %b · %Hh%M EDT')}"
+    # French day/month names (no locale dependency on CI runner)
+    days_fr = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
+    months_fr = ["jan", "fév", "mars", "avr", "mai", "juin",
+                 "juil", "août", "sept", "oct", "nov", "déc"]
+    update_label = (
+        f"Météo mise à jour {days_fr[now.weekday()]} "
+        f"{now.day} {months_fr[now.month - 1]} · "
+        f"{now.strftime('%Hh%M')} EDT"
+    )
+    # Replace ALL occurrences (topbar + weather banner)
     new_html = re.sub(
         r"<!-- LAST_UPDATE_START -->.*?<!-- LAST_UPDATE_END -->",
         f"<!-- LAST_UPDATE_START -->{update_label}<!-- LAST_UPDATE_END -->",
         new_html,
-        count=1,
         flags=re.DOTALL,
     )
 
