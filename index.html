@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Carnet de voyage — Côte du Maine · 16-18 mai 2026 · Famille Dufresne-Collerette">
+<title>Carnet Maine 2026 · Dufresne-Collerette</title>
+<style>
+:root {
+  --navy: #1e3a5f;
+  --navy-light: #3b5f8a;
+  --sand: #f5e6d3;
+  --sand-deep: #e8d4b8;
+  --lobster: #c84e3a;
+  --lobster-dark: #a8392b;
+  --off-white: #fdfcf8;
+  --text: #2d3436;
+  --text-light: #6b7280;
+  --gold: #c9a55a;
+  --seaweed: #4a6b5e;
+  --steal: #b94a8c;
+  --steal-bg: #fce8f3;
+  --green: #22c55e;
+}
+* { box-sizing: border-box; }
+html, body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0; padding: 0;
+  background: var(--off-white);
+}
+.container { max-width: 780px; margin: 0 auto; padding: 0 16px 60px; }
+
+/* Cover */
+.cover {
+  background: linear-gradient(135deg, #1e3a5f 0%, #3b5f8a 50%, #4a6b5e 100%);
+  color: white;
+  padding: 60px 20px 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.cover .eyebrow { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.cover h1 { font-size: 44px; margin: 0 0 12px; font-weight: normal; line-height: 1.1; }
+.cover .subtitle { font-size: 18px; color: var(--sand); font-style: italic; margin-bottom: 18px; }
+.cover .dates { font-size: 22px; color: var(--gold); letter-spacing: 3px; margin-bottom: 24px; }
+.cover .family { font-size: 14px; color: rgba(255,255,255,0.95); letter-spacing: 2px; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.3); padding: 12px 24px; display: inline-block; }
+.cover .family-names { font-size: 11px; margin-top: 6px; letter-spacing: 1px; color: var(--sand); font-style: italic; }
+
+/* Sticky top bar */
+.topbar {
+  position: sticky;
+  top: 0;
+  background: var(--navy);
+  color: white;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.topbar .left { font-weight: bold; }
+.topbar .update-info { color: var(--sand); font-style: italic; font-size: 11px; }
+.topbar .pdf-link { background: var(--lobster); color: white; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-size: 12px; }
+
+/* Headings */
+h2 { color: var(--lobster-dark); border-bottom: 1px solid var(--sand-deep); padding-bottom: 6px; font-size: 26px; margin-top: 40px; }
+h3 { color: var(--navy-light); font-size: 19px; }
+h4 { color: var(--seaweed); font-style: italic; font-size: 16px; }
+a { color: var(--lobster-dark); }
+strong { color: var(--navy); }
+em { color: var(--seaweed); }
+
+/* TLDR Banner */
+.tldr-banner {
+  background: linear-gradient(135deg, var(--lobster) 0%, var(--lobster-dark) 100%);
+  color: white;
+  padding: 24px 24px;
+  border-radius: 12px;
+  margin: 24px 0;
+}
+.tldr-banner h2 { color: white; border: none; margin: 0 0 8px; font-size: 26px; }
+.tldr-banner .tagline { margin: 0; font-style: italic; opacity: 0.95; }
+
+/* Weather */
+.weather-banner {
+  background: linear-gradient(135deg, #fef3c7 0%, #fff5e6 100%);
+  border: 2px solid var(--gold);
+  padding: 18px 22px;
+  border-radius: 12px;
+  margin: 24px 0;
+}
+.weather-banner h3 { margin-top: 0; color: var(--lobster-dark); }
+.weather-banner .auto-update {
+  display: inline-block;
+  background: rgba(34, 197, 94, 0.15);
+  color: #14532d;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.weather-banner table { width: 100%; border-collapse: collapse; background: white; margin-top: 10px; }
+.weather-banner th, .weather-banner td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--sand-deep); font-size: 14px; }
+.weather-banner th { background: var(--lobster); color: white; }
+
+/* Must items */
+.must-list { padding: 0; margin: 16px 0; }
+.must-item {
+  background: white;
+  border: 2px solid var(--lobster);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 12px 0;
+}
+.must-item .num {
+  background: var(--lobster); color: white; padding: 3px 12px; border-radius: 6px;
+  font-weight: bold; font-size: 14px; margin-right: 10px;
+}
+.must-item .name { font-size: 18px; font-weight: bold; color: var(--navy); }
+.must-item .when { color: var(--gold); font-weight: bold; font-size: 13px; margin-left: 8px; display: inline-block; }
+.must-item .why { margin-top: 8px; font-size: 14px; }
+.must-item .why::before { content: "Pourquoi : "; color: var(--lobster-dark); font-weight: bold; }
+
+/* Day card */
+.day-card {
+  background: white;
+  border: 1px solid var(--sand-deep);
+  border-radius: 12px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.day-card .day-header {
+  background: var(--navy); color: white;
+  padding: 14px 20px; font-size: 18px; font-weight: bold;
+}
+.day-card .day-body { padding: 16px 20px; }
+.schedule-block {
+  display: flex; margin: 12px 0; padding-bottom: 10px;
+  border-bottom: 1px solid var(--sand-deep);
+}
+.schedule-block:last-child { border-bottom: none; }
+.schedule-time {
+  flex: 0 0 75px; font-weight: bold; color: var(--lobster-dark); font-size: 14px; padding-top: 2px;
+}
+.schedule-content { flex: 1; padding-left: 14px; border-left: 3px solid var(--sand-deep); }
+.schedule-content .activity { font-weight: bold; color: var(--navy); font-size: 15px; }
+.schedule-content .detail { font-size: 13px; color: var(--text); margin-top: 3px; }
+.schedule-block.highlight .schedule-content { border-left-color: var(--lobster); }
+.schedule-block.food .schedule-content { border-left-color: var(--gold); }
+.schedule-block.activity .schedule-content { border-left-color: var(--seaweed); }
+.schedule-block.beach .schedule-content { border-left-color: var(--green); }
+
+/* Steal box */
+.steal-box {
+  background: linear-gradient(135deg, var(--steal-bg) 0%, #fff5fa 100%);
+  border: 2px solid var(--steal);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.steal-box .label {
+  display: inline-block;
+  background: var(--steal); color: white;
+  padding: 4px 12px; font-size: 11px; font-weight: bold;
+  letter-spacing: 2px; border-radius: 4px; margin-bottom: 8px;
+}
+.steal-box h4 { margin: 0 0 8px; font-size: 17px; color: var(--steal); }
+.steal-box .price { display: inline-block; background: var(--steal); color: white; padding: 4px 12px; border-radius: 6px; font-weight: bold; margin-right: 8px; font-size: 14px; }
+.steal-box .why { font-style: italic; color: #7a3a5e; font-size: 13px; margin-top: 8px; }
+
+/* Rating */
+.rating-line {
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 3px solid #16a34a;
+  padding: 5px 12px;
+  margin: 6px 0;
+  font-size: 13px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Fun fact */
+.fun-fact {
+  background: linear-gradient(to right, rgba(201, 165, 90, 0.15), rgba(201, 165, 90, 0.05));
+  border-left: 4px solid var(--gold);
+  padding: 12px 18px;
+  margin: 14px 0;
+  border-radius: 0 6px 6px 0;
+}
+.fun-fact .label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: bold; }
+
+.callout {
+  background: var(--sand);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+.warning-box {
+  background: #fff5e6;
+  border: 2px solid var(--gold);
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+
+/* Cards */
+.inst-card {
+  background: white;
+  border: 1px solid var(--sand-deep);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 12px 0;
+}
+.inst-card .name { font-size: 15px; font-weight: bold; color: var(--navy); }
+.inst-card .year { color: var(--lobster); font-weight: bold; font-size: 14px; }
+.inst-card .tagline { font-style: italic; color: var(--text-light); font-size: 13px; margin: 4px 0; }
+
+/* Stats */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+.stat-box { background: var(--sand); padding: 14px; border-radius: 8px; text-align: center; }
+.stat-box .number { font-size: 22px; font-weight: bold; color: var(--lobster); display: block; }
+.stat-box .label { font-size: 10px; color: var(--navy); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+/* Family names */
+.name-yannick { color: #c9a55a; font-weight: bold; }
+.name-patricia { color: #16a34a; font-weight: bold; }
+.name-joseph { color: #d97706; font-weight: bold; }
+.name-mika { color: #dc2626; font-weight: bold; }
+.name-luce { color: #dc2626; font-weight: bold; }
+
+.icon-svg { display: inline-block; vertical-align: -3px; }
+
+/* TOC */
+.toc { background: white; padding: 18px 24px; border-radius: 12px; border: 1px solid var(--sand-deep); margin: 20px 0; }
+.toc h2 { margin-top: 0; }
+.toc ol { padding-left: 0; list-style: none; counter-reset: toc-counter; }
+.toc li { counter-increment: toc-counter; margin: 8px 0; }
+.toc li::before { content: counter(toc-counter, decimal-leading-zero) ". "; color: var(--lobster); font-weight: bold; margin-right: 6px; }
+.toc a { font-weight: bold; color: var(--navy); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+th { background: var(--navy); color: white; padding: 8px 10px; text-align: left; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--sand-deep); }
+tr:nth-child(even) { background: rgba(245, 230, 211, 0.3); }
+
+/* Checklist */
+.checklist { background: var(--off-white); border: 1px dashed var(--text-light); padding: 14px 18px; margin: 12px 0; border-radius: 8px; }
+.check-item { display: block; padding: 4px 0; }
+.check-item::before { content: "☐ "; color: var(--navy); font-size: 16px; margin-right: 6px; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .container { padding: 0 12px 40px; }
+  .cover h1 { font-size: 32px; }
+  .cover .subtitle { font-size: 15px; }
+  .cover .dates { font-size: 18px; }
+  h2 { font-size: 22px; }
+  .schedule-time { flex: 0 0 65px; font-size: 13px; }
+  .schedule-content .activity { font-size: 14px; }
+  .stat-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .stat-box .number { font-size: 18px; }
+  .stat-box .label { font-size: 9px; }
+  .topbar { font-size: 11px; padding: 6px 10px; }
+  .topbar .update-info { font-size: 10px; }
+}
+
+/* SVG icons */
+.icon-heart, .icon-chick, .icon-cherries { display: inline-block; vertical-align: -3px; }
+
+footer { text-align: center; margin-top: 60px; padding: 40px 20px; color: var(--text-light); font-size: 13px; border-top: 1px solid var(--sand-deep); }
+
+/* Password gate */
+#gate {
+  position: fixed; inset: 0; z-index: 9999;
+  background: linear-gradient(135deg, #1e3a5f 0%, #3b5f8a 50%, #4a6b5e 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+#gate.hidden { display: none; }
+#gate .box {
+  background: var(--off-white);
+  border-radius: 12px;
+  padding: 36px 32px;
+  max-width: 360px; width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  text-align: center;
+}
+#gate .eyebrow {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+#gate h2 {
+  margin: 0 0 6px; font-size: 22px; font-weight: normal; color: var(--navy);
+}
+#gate p {
+  font-size: 13px; color: var(--text-light); margin: 0 0 22px; font-style: italic;
+}
+#gate input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--sand-deep);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: Georgia, serif;
+  margin-bottom: 12px;
+  background: white;
+}
+#gate input:focus { outline: none; border-color: var(--navy); }
+#gate button {
+  width: 100%;
+  padding: 12px;
+  background: var(--lobster);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+#gate button:hover { background: var(--lobster-dark); }
+#gate .err { color: var(--lobster); font-size: 12px; height: 14px; margin-top: 8px; }
+body.locked { overflow: hidden; }
+body.locked > *:not(#gate) { filter: blur(8px); pointer-events: none; user-select: none; }
+</style>
+</head>
+<body class="locked">
+
+<!-- Password gate -->
+<div id="gate">
+  <div class="box">
+    <div class="eyebrow">Carnet privé</div>
+    <h2>Maine 2026</h2>
+    <p>Famille Dufresne-Collerette</p>
+    <form id="gate-form" autocomplete="off">
+      <input type="password" id="gate-pw" placeholder="Mot de passe" autofocus>
+      <button type="submit">Entrer</button>
+      <div class="err" id="gate-err">&nbsp;</div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function() {
+  // SHA-256 of the family password. Light-duty gate: blocks Google indexing
+  // and casual visitors. Not real authentication.
+  const EXPECTED_HASH = "1ee7170cad4a431b90c6c9aa4011ff0c8712e2b7763b61fc44b1ba1df73bbf98";
+  const STORAGE_KEY = "maine_trip_unlocked";
+
+  async function sha256(text) {
+    const buf = new TextEncoder().encode(text);
+    const hash = await crypto.subtle.digest("SHA-256", buf);
+    return Array.from(new Uint8Array(hash))
+      .map(b => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  function unlock() {
+    document.body.classList.remove("locked");
+    const gate = document.getElementById("gate");
+    if (gate) gate.classList.add("hidden");
+  }
+
+  // Already unlocked this browser?
+  try {
+    if (localStorage.getItem(STORAGE_KEY) === EXPECTED_HASH) {
+      unlock();
+      return;
+    }
+  } catch (e) { /* localStorage might be blocked */ }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("gate-form");
+    const input = document.getElementById("gate-pw");
+    const err = document.getElementById("gate-err");
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      err.textContent = "";
+      const hash = await sha256(input.value);
+      if (hash === EXPECTED_HASH) {
+        try { localStorage.setItem(STORAGE_KEY, EXPECTED_HASH); } catch (e) {}
+        unlock();
+      } else {
+        err.textContent = "Mot de passe incorrect";
+        input.value = "";
+        input.focus();
+      }
+    });
+  });
+})();
+</script>
+
+<!-- Top sticky bar with last updated -->
+<div class="topbar">
+  <span class="left">Carnet Maine · Dufresne-Collerette</span>
+  <span class="update-info"><!-- LAST_UPDATE_START -->Météo mise à jour Wed 13 May · 10h16 EDT<!-- LAST_UPDATE_END --></span>
+  <a class="pdf-link" href="maine-trip-book.pdf" download>PDF</a>
+</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="eyebrow">✦ Carnet de voyage ✦</div>
+  <h1>Côte du Maine</h1>
+  <div class="subtitle">Belfast · Camden · Mid-Coast</div>
+  <div class="dates">16 — 18 MAI 2026</div>
+  <div class="family">
+    LA FAMILLE DUFRESNE-COLLERETTE
+    <div class="family-names">Yannick &amp; Patricia · Joseph (13) · Mika &amp; Luce (jumelles 20 mois)</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- TLDR -->
+<div class="tldr-banner">
+  <h2>L'essentiel — TL;DR pour Patricia</h2>
+  <p class="tagline">Le reste = suggestions. Voici ce qu'on ne doit pas manquer.</p>
+</div>
+
+<!-- WEATHER (auto-updated) -->
+<div class="weather-banner">
+  <h3>Météo — mise à jour automatique</h3>
+  <span class="auto-update"><!-- AUTO_UPDATE_BADGE_START -->Auto-update toutes les 4h jusqu'au 18 mai<!-- AUTO_UPDATE_BADGE_END --></span>
+  <!-- WEATHER_TABLE_START -->
+<table>
+<tr><th>Jour</th><th>Conditions</th><th>Jour (°C)</th><th>Nuit (°C)</th><th>Précip</th></tr>
+<tr style="background: #e8f5e9;"><td><strong>Sam 16</strong></td><td>☀ Ensoleillé</td><td><strong>23°C</strong></td><td>11°C</td><td>—</td></tr>
+<tr style="background: #e8f5e9;"><td><strong>Dim 17</strong></td><td>☀ Ensoleillé</td><td><strong>23°C</strong></td><td>9°C</td><td>—</td></tr>
+<tr style="background: #e8f5e9;"><td><strong>Lun 18</strong></td><td>☀ Majoritairement ensoleillé</td><td><strong>21°C</strong></td><td>9°C</td><td>—</td></tr>
+</table>
+<!-- WEATHER_TABLE_END -->
+  <p style="font-size: 14px; margin-top: 12px;"><strong>Implication concrète</strong> : plage prioritaire <strong>dimanche pm</strong> et <strong>lundi am</strong>. Samedi = focus indoor.</p>
+</div>
+
+<!-- 5 Incontournables -->
+<h2>Les 5 incontournables (avec le pourquoi)</h2>
+
+<div class="must-item">
+  <span class="num">1</span><span class="name">Lincolnville Beach</span><span class="when">dim pm ou lun am · 4h+</span>
+  <div class="why">L'objectif principal du voyage. Plage sable + galets, slope graduel, eau calme protégée par l'île d'Islesboro. <span class="name-mika">Mika</span> &amp; <span class="name-luce">Luce</span> peuvent jouer dans le sable en sécurité, <span class="name-yannick">Yannick</span> et <span class="name-patricia">Patricia</span> peuvent lire/relaxer. 15 min de Seascape, GRATUIT, Google 4.7/5.</div>
+</div>
+
+<div class="must-item">
+  <span class="num">2</span><span class="name">Belfast City Park playground</span><span class="when">lundi matin · 2h</span>
+  <div class="why">Le meilleur playground du Maine selon TripAdvisor. Toddler playground séparé, sécuritaire, long hillside slide, 17.5 acres waterfront, GRATUIT. À 10 min de Seascape.</div>
+</div>
+
+<div class="must-item">
+  <span class="num">3</span><span class="name">Moody's Diner — Waldoboro</span><span class="when">samedi lunch</span>
+  <div class="why">Institution familiale depuis 1927, 4 générations de Moody, Down East Best Diner Maine 2025 (Google 4.5/5). Booth en vinyle rouge années 50, Yankee pot roast, doughnuts maison.</div>
+</div>
+
+<div class="must-item">
+  <span class="num">4</span><span class="name">WW&amp;F Railway WWI Reenactment</span><span class="when">samedi 11h-13h30</span>
+  <div class="why"><span class="name-joseph">Joseph</span> va capoter. Train à vapeur narrow-gauge (60cm — quasi-unique aux États-Unis) + campement WWI reconstitué. Le kitsch authentique qu'on trouve nulle part ailleurs en Amérique du Nord.</div>
+</div>
+
+<div class="must-item">
+  <span class="num">5</span><span class="name">Marshall Wharf Brewing</span><span class="when">samedi soir</span>
+  <div class="why">Bâtiment 1890 (ancien grenier de ville) sur Belfast Bay, outdoor beer atrium (couvert si pluie), huîtres Pemaquid fraîches ($3 chaque vs $8 à NYC), 30+ bières craft.</div>
+</div>
+
+<div class="callout">
+  <p style="margin: 0;"><strong>Tout le reste = suggestions.</strong> Mount Battie, Cellardoor Winery, Round Top Ice Cream, Perry's Nut House, Beth's Farm Market, Pemaquid — bonus si beau et énergie. Sinon : <strong>plage + playground + repas légendaires = mission accomplie</strong>.</p>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>Table des matières</h2>
+  <ol>
+    <li><a href="#carte">Carte du Mid-Coast</a></li>
+    <li><a href="#horaire">Horaire jour par jour</a></li>
+    <li><a href="#cheaps">Coups de cœur de cheaps</a></li>
+    <li><a href="#histoire">Histoire du Maine</a></li>
+    <li><a href="#kids">Fun pour les kids</a></li>
+    <li><a href="#institutions">Institutions Mainers (Google ratings)</a></li>
+    <li><a href="#checklist">Checklist pré-départ</a></li>
+  </ol>
+</div>
+
+<!-- HORAIRE -->
+<h2 id="horaire">Horaire suggéré jour par jour</h2>
+
+<p><strong>Plan ajusté pour la météo</strong> : samedi nuageux/pluvieux (WWI Festival + Moody's + Marshall Wharf, tous abrités), dimanche et lundi = fenêtres ensoleillées pour plage/playground.</p>
+
+<div class="day-card">
+<div class="day-header">Samedi 16 mai — Route + WWI Festival + Belfast</div>
+<div class="day-body">
+
+<div class="schedule-block"><div class="schedule-time">4h00</div><div class="schedule-content"><span class="activity">Départ Québec via Jackman</span><div class="detail"><span class="name-yannick">Yannick</span> au volant. <span class="name-mika">Mika</span> &amp; <span class="name-luce">Luce</span> dans sièges d'auto.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">6h30</div><div class="schedule-content"><span class="activity">Frontière US à Jackman</span></div></div>
+<div class="schedule-block food"><div class="schedule-time">8h30-9h30</div><div class="schedule-content"><span class="activity">Petit-déj Skowhegan ou Hallowell</span><div class="detail">The Liberal Cup (Hallowell) ou Heritage House (Skowhegan).</div></div></div>
+<div class="schedule-block highlight activity"><div class="schedule-time">11h-13h30</div><div class="schedule-content"><span class="activity">★ WW&amp;F Railway WWI Reenactment — Alna</span><div class="detail">97 Cross Road. Train à vapeur narrow-gauge + campement reconstitué. Apporter coats imperméables.</div></div></div>
+<div class="schedule-block highlight food"><div class="schedule-time">14h-15h30</div><div class="schedule-content"><span class="activity">★ LUNCH MOODY'S DINER</span><div class="detail">Google 4.5/5 · 1927 · Yankee pot roast + wild blueberry pie.</div></div></div>
+<div class="schedule-block food"><div class="schedule-time">15h30-16h</div><div class="schedule-content"><span class="activity">Round Top Ice Cream — Damariscotta</span><div class="detail">Google 4.6/5 · 1924 · 101 ans d'institution.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">16h-16h30</div><div class="schedule-content"><span class="activity">Pemaquid Lobster &amp; Seafood (optionnel)</span><div class="detail">Pour crab meat + huîtres dans glacière.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">18h00</div><div class="schedule-content"><span class="activity">Check-in Seascape</span></div></div>
+<div class="schedule-block highlight food"><div class="schedule-time">18h30-20h30</div><div class="schedule-content"><span class="activity">★ Souper Marshall Wharf Brewing</span><div class="detail">Huîtres Pemaquid + bières + live music sous l'atrium couvert. Bâtiment 1890.</div></div></div>
+
+</div>
+</div>
+
+<div class="day-card">
+<div class="day-header">Dimanche 17 mai — Mt. Battie + LINCOLNVILLE BEACH 4h</div>
+<div class="day-body">
+
+<div class="schedule-block food"><div class="schedule-time">8h-9h</div><div class="schedule-content"><span class="activity">Petit-déj cottage vue océan</span></div></div>
+<div class="schedule-block activity"><div class="schedule-time">10h-11h30</div><div class="schedule-content"><span class="activity">Mount Battie Auto Road — Camden</span><div class="detail">$6 USD/ad · panoramic 360° Penobscot Bay · Google 4.8/5.</div></div></div>
+<div class="schedule-block food"><div class="schedule-time">11h30-12h30</div><div class="schedule-content"><span class="activity">Lunch picnic à emporter</span><div class="detail">Camden Deli — sandwiches à manger sur la plage.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">12h30-13h</div><div class="schedule-content"><span class="activity">Drive Camden → Lincolnville (15 min)</span><div class="detail">Arrêt rapide State of Maine Cheese (Rockport).</div></div></div>
+<div class="schedule-block highlight beach"><div class="schedule-time">13h-17h</div><div class="schedule-content"><span class="activity">★★ LINCOLNVILLE BEACH — 4 HEURES</span><div class="detail"><strong>Le moment phare.</strong> Sable + galets · Google 4.7/5 · GRATUIT. Picnic, sable pour les filles, lecture pour les parents.</div></div></div>
+<div class="schedule-block activity"><div class="schedule-time">17h-17h45</div><div class="schedule-content"><span class="activity">Cellardoor Winery (optionnel)</span><div class="detail">Barn 1790 · Google 4.6/5 · giant chess pieces.</div></div></div>
+<div class="schedule-block food"><div class="schedule-time">19h-20h30</div><div class="schedule-content"><span class="activity">Souper McLaughlin's OU cottage</span></div></div>
+
+</div>
+</div>
+
+<div class="day-card">
+<div class="day-header">Lundi 18 mai — Belfast City Park 2h + retour</div>
+<div class="day-body">
+
+<div class="schedule-block food"><div class="schedule-time">8h-9h</div><div class="schedule-content"><span class="activity">Petit-déj cottage · pack up</span></div></div>
+<div class="schedule-block"><div class="schedule-time">9h-9h45</div><div class="schedule-content"><span class="activity">Moose Point State Park</span><div class="detail">Dernière marche océan.</div></div></div>
+<div class="schedule-block highlight beach"><div class="schedule-time">10h-12h</div><div class="schedule-content"><span class="activity">★★ BELFAST CITY PARK — 2H PLAYGROUND</span><div class="detail">Google 4.7/5 · établi 1904 · playground TODDLER séparé · long hillside slide · GRATUIT.</div></div></div>
+<div class="schedule-block activity"><div class="schedule-time">12h-12h30</div><div class="schedule-content"><span class="activity">Perry's Nut House (5 min)</span><div class="detail">1927 · Cabinet of Curiosities · fudge maison.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">13h</div><div class="schedule-content"><span class="activity">Check-out Seascape</span></div></div>
+<div class="schedule-block highlight activity"><div class="schedule-time">13h30-14h15</div><div class="schedule-content"><span class="activity">Beth's Farm Market — Warren (1929)</span></div></div>
+<div class="schedule-block food"><div class="schedule-time">14h30-15h30</div><div class="schedule-content"><span class="activity">Lunch Damariscotta</span><div class="detail">Reilly's Bakery (whoopie pies) ou King Eider's Pub.</div></div></div>
+<div class="schedule-block"><div class="schedule-time">~20h</div><div class="schedule-content"><span class="activity">Arrivée Québec</span></div></div>
+
+</div>
+</div>
+
+<!-- COUPS DE COEUR -->
+<h2 id="cheaps">Coups de cœur de cheaps</h2>
+
+<div class="steal-box">
+  <span class="label">COUP DE CŒUR</span>
+  <h4>Lincolnville Beach</h4>
+  <span class="price">GRATUIT</span>
+  <div class="rating-line">Google ⭐ 4.7/5 · sable + galets · slope graduel · eau calme</div>
+  <p>4h de plage avec parking gratuit · objectif #1 du voyage.</p>
+</div>
+
+<div class="steal-box">
+  <span class="label">COUP DE CŒUR</span>
+  <h4>Belfast City Park (1904)</h4>
+  <span class="price">GRATUIT</span>
+  <div class="rating-line">Google ⭐ 4.7/5 · 17.5 acres waterfront · long hillside slide</div>
+  <p>Meilleur playground du Maine selon TripAdvisor.</p>
+</div>
+
+<div class="steal-box">
+  <span class="label">COUP DE CŒUR</span>
+  <h4>Mount Battie Auto Road — Camden</h4>
+  <span class="price">$6 USD / adulte</span>
+  <div class="rating-line">Google ⭐ 4.8/5 · panoramic 360° Penobscot Bay</div>
+  <p>Vue qu'à Manhattan tu paierais $50.</p>
+</div>
+
+<div class="steal-box">
+  <span class="label">COUP DE CŒUR</span>
+  <h4>Moody's Diner (1927)</h4>
+  <span class="price">$10-15 / plat</span>
+  <div class="rating-line">Google ⭐ 4.5/5 · Down East Best Diner Maine 2025</div>
+  <p>Lunch famille 5 pour ~$60 dans une institution centenaire.</p>
+</div>
+
+<div class="steal-box">
+  <span class="label">COUP DE CŒUR</span>
+  <h4>Round Top Ice Cream (1924)</h4>
+  <span class="price">$4-6 / cône</span>
+  <div class="rating-line">Google ⭐ 4.6/5 · 101 ans · "A Maine Icon"</div>
+  <p>Tu manges la même recette qu'un client de 1925.</p>
+</div>
+
+<!-- HISTOIRE -->
+<h2 id="histoire">Histoire du Maine — les vrais bouts</h2>
+
+<h3>La Whoopie Pie — la guerre Maine vs Pennsylvania</h3>
+<p>Le whoopie pie est le state treat officiel du Maine depuis 2011. Deux mini-gâteaux au chocolat + glaçage marshmallow blanc. C'est ce que tu manges chez Reilly's Bakery lundi.</p>
+<p>Maine et Pennsylvania se le disputent depuis 100 ans. Les Amish de Lancaster County (PA) revendiquent l'invention. Mais <strong>la plus vieille trace écrite vient de Labadie's Bakery à Lewiston (Maine) en 1925</strong>. Le législateur du Maine a voté en 2011 pour s'approprier officiellement le whoopie pie.</p>
+<div class="fun-fact">
+  <div class="label">FUN FACT</div>
+  <p>Lewiston, où Labadie's a inventé le whoopie pie en 1925, était <strong>50% franco-canadien à cette époque</strong>. Le whoopie pie est probablement né dans une boulangerie tenue par des descendants québécois immigrés au Maine.</p>
+</div>
+
+<h3>Le homard — autrefois nourriture de pauvres</h3>
+<p>Aux 17e-18e siècles, le homard était la "nourriture des pauvres" — donné aux prisonniers, servants engagés, esclaves. <strong>Certains contrats stipulaient pas plus de 3 fois/semaine</strong>. Sa transformation en mets de luxe est arrivée avec le chemin de fer fin 19e siècle.</p>
+
+<h3>Pemaquid Lighthouse — l'erreur de mortier de John Quincy Adams</h3>
+<p>Le phare commandé en 1827 par John Quincy Adams a été construit avec <strong>du mortier mélangé à l'eau salée</strong> (erreur). Il s'est effrité et a dû être <strong>reconstruit en 1835</strong>. En 2003, devenu la <strong>première lighthouse de l'histoire sur la monnaie américaine</strong> (Maine state quarter).</p>
+
+<h3>Maine wild blueberries — 99% américains</h3>
+<p>99% des wild blueberries (low-bush) produits aux États-Unis viennent du Maine. Culture native — les Wabanaki les récoltaient depuis des millénaires.</p>
+
+<h3>L.L. Bean — shoe disaster qui a créé un empire</h3>
+<p>1911 : Leon Bean rentre de chasse à Freeport avec les pieds trempés. Frustré, il bricole la "Maine Hunting Shoe" (tige cuir + semelle caoutchouc). Catalogue 1912. Le <strong>magasin phare de L.L. Bean à Freeport est ouvert 24 heures sur 24, 365 jours par année</strong>. Les portes n'ont pas de serrure.</p>
+
+<h3>Belfast 1770 + architecture</h3>
+<p>Belfast fondée 1770 (6 ans avant l'Indépendance) par des colons Scots-Irish. 30% des hommes au 19e siècle = marine marchande. Classée National Register of Historic Places 1986. <span class="name-patricia">Patricia</span>, regarde sur Church Street et Primrose Hill : Federal, Greek Revival, Italianate, Queen Anne Victorian. Plusieurs maisons ont leur "widow's walk".</p>
+
+<h3>Searsport — 300 capitaines pour 2 000 habitants</h3>
+<p>10 min nord de Belfast. Au 19e siècle, <strong>10% des navires américains étaient captainés par des hommes de Searsport</strong>. 300 capitaines. 17 chantiers navals.</p>
+
+<h3>Damariscotta oysters — 2 000 ans</h3>
+<p>Les Wabanaki mangeaient des huîtres ici <strong>depuis 2 000 ans</strong>. On voit encore les middens (monticules de coquilles) sur la rive. Aquaculture moderne relancée 1986. "The Oyster Capital of New England".</p>
+
+<h3>Stephen King + In the Bedroom</h3>
+<p>Stephen King est né à Portland 1947, vit à Bangor. Sa maison avec grilles en fer forgé chauves-souris est une icône. Films à voir : <strong>Stand by Me</strong> (1986, parfait pour <span class="name-joseph">Joseph</span>), <strong>Shawshank Redemption</strong> (1994).</p>
+<p>Plus pertinent : <strong>"In the Bedroom" (2001)</strong>, nominé 5 Oscars. <strong>La scène finale est tournée AU SOMMET DE MOUNT BATTIE</strong> — où vous serez dimanche matin.</p>
+
+<h3>Le Maine et le Québec — 270 000 cousins</h3>
+<p>20% de la population du Maine a des racines françaises. Deux vagues : Acadiens (Grand Dérangement 1755-1764 → Saint John Valley) et Québécois (1880-1930 → filatures Lewiston). Lewiston était 50% franco-canadien en 1920. Henry Wadsworth Longfellow, né à Portland 1807, a écrit "Evangeline" (1847) — l'épopée qui a immortalisé la déportation acadienne.</p>
+
+<!-- KIDS -->
+<h2 id="kids">Fun pour les kids</h2>
+<p><span class="name-joseph">Joseph</span> a aimé Fun-O-Rama à York Beach. Équivalents accessibles depuis Belfast :</p>
+
+<div class="inst-card">
+  <div class="name">ALLPLaY Family Entertainment Center — Belfast</div>
+  <div class="tagline">2 min en char de Seascape. Centre intérieur · arcade · soft play. <strong>Plan B parfait si pluie samedi soir</strong>.</div>
+</div>
+<div class="inst-card">
+  <div class="name">Belfast City Park — long hillside slide</div>
+  <div class="tagline">Le playground a une longue glissade en flanc de colline.</div>
+</div>
+<div class="inst-card">
+  <div class="name">Mount Battie Auto Road</div>
+  <div class="tagline">Tour mémorial WWI 1921 à grimper. Photos panoramiques.</div>
+</div>
+<div class="inst-card">
+  <div class="name">Perry's Nut House</div>
+  <div class="tagline">Cabinet de Curiosités 1927. <span class="name-joseph">Joseph</span> va trouver ça "weirdly cool".</div>
+</div>
+<div class="inst-card">
+  <div class="name">WW&amp;F Railway WWI Reenactment</div>
+  <div class="tagline">Train à vapeur + campement militaire reconstitué.</div>
+</div>
+<div class="inst-card">
+  <div class="name">Cellardoor Winery — giant chess pieces</div>
+  <div class="tagline">Pendant que les parents font le tasting.</div>
+</div>
+
+<!-- INSTITUTIONS -->
+<h2 id="institutions">Institutions Mainers (notes Google)</h2>
+
+<div class="inst-card">
+  <div class="name">Moody's Diner <span class="year">· 1927</span></div>
+  <div class="tagline">Waldoboro · Yankee pot roast, doughnuts</div>
+  <div class="rating-line">Google ⭐ 4.5/5 · #1 of 12 Waldoboro · Best Diner Maine 2025</div>
+</div>
+<div class="inst-card">
+  <div class="name">Round Top Ice Cream <span class="year">· 1924</span></div>
+  <div class="tagline">Damariscotta · 50+ saveurs maison</div>
+  <div class="rating-line">Google ⭐ 4.6/5 · "A Maine Icon"</div>
+</div>
+<div class="inst-card">
+  <div class="name">McLaughlin's Lobster Shack <span class="year">· 1956</span></div>
+  <div class="tagline">Lincolnville Beach · best haddock sandwich Maine</div>
+  <div class="rating-line">Google ⭐ 4.2/5</div>
+</div>
+<div class="inst-card">
+  <div class="name">Marshall Wharf Brewing</div>
+  <div class="tagline">Belfast waterfront · bâtiment 1890</div>
+  <div class="rating-line">Google ⭐ 4.2/5</div>
+</div>
+<div class="inst-card">
+  <div class="name">Cellardoor Winery</div>
+  <div class="tagline">Lincolnville · barn 1790 · family-friendly</div>
+  <div class="rating-line">Google ⭐ 4.6/5 · OpenTable 4.9/5</div>
+</div>
+<div class="inst-card">
+  <div class="name">Beth's Farm Market <span class="year">· 1929</span></div>
+  <div class="tagline">Warren · berries, fudge, jams</div>
+</div>
+<div class="inst-card">
+  <div class="name">Perry's Nut House <span class="year">· 1927</span></div>
+  <div class="tagline">Belfast · Cabinet of Curiosities</div>
+</div>
+
+<div class="warning-box">
+  <strong>⚠ Marriner's Camden</strong> (Google 4.1/5) : changement de propriétaire récent, Yelp indique fermé. <strong>Appeler 207-236-4949 avant.</strong>
+</div>
+
+<!-- CHECKLIST -->
+<h2 id="checklist">Checklist pré-départ</h2>
+
+<h3>À empaqueter</h3>
+<div class="checklist">
+<span class="check-item">2 pack-and-plays + draps pour <span class="name-mika">Mika</span> &amp; <span class="name-luce">Luce</span></span>
+<span class="check-item">Glacière + ice packs (pour crab/huîtres samedi)</span>
+<span class="check-item">Seau-pelle pour la plage</span>
+<span class="check-item">Livres pour la lecture à la plage</span>
+<span class="check-item">Coats coupe-vent imperméables</span>
+<span class="check-item">Bottes de pluie</span>
+<span class="check-item">Tuques pour les jumelles (nuits 6-8°C)</span>
+<span class="check-item">Crème solaire</span>
+<span class="check-item">Maillots de bain</span>
+<span class="check-item">Passeports + carte santé enfants</span>
+<span class="check-item">Cash US pour Renys + farm stands</span>
+</div>
+
+<h3>À faire avant départ</h3>
+<div class="checklist">
+<span class="check-item">Appeler Seascape (207-338-2153) pour confirmer BBQ</span>
+<span class="check-item">Vérifier météo vendredi 15 mai (weather.gov)</span>
+<span class="check-item">Plein d'essence vendredi soir</span>
+<span class="check-item">Préparer kit collations + thermos café</span>
+<span class="check-item">Visionner "In the Bedroom" (Mt. Battie!)</span>
+</div>
+
+<h3>À ramener</h3>
+<div class="checklist">
+<span class="check-item">Fromages State of Maine Cheese</span>
+<span class="check-item">Fudge + jams Beth's Farm Market</span>
+<span class="check-item">Whoopie pies Reilly's Bakery</span>
+<span class="check-item">Café 44 North Coffee</span>
+<span class="check-item">Crab meat peekytoe Pemaquid (glacière!)</span>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  <p style="font-style: italic; font-size: 14px;">"All I could see from where I stood<br>Was three long mountains and a wood;<br>I turned and looked another way,<br>And saw three islands in a bay."</p>
+  <p style="font-size: 11px; letter-spacing: 2px; color: var(--text-light);">— Edna St. Vincent Millay, 1912 · Mount Battie</p>
+  <p style="margin-top: 30px; font-size: 11px; letter-spacing: 2px;">YANNICK · PATRICIA · JOSEPH · MIKA · LUCE<br>16 — 18 MAI 2026</p>
+  <p style="font-size: 10px; margin-top: 20px; color: var(--text-light);">Page auto-mise à jour toutes les 4h via GitHub Actions · NWS API</p>
+</footer>
+
+</body>
+</html>
