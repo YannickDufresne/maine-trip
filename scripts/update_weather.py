@@ -155,6 +155,36 @@ def estimate_precip_percent(short_forecast, detailed_forecast):
     return "—"
 
 
+def compute_implication(periods_by_date):
+    """Build a dynamic 'plage vs indoor' recommendation from the forecast."""
+    day_names_fr = {"2026-05-16": "samedi", "2026-05-17": "dimanche", "2026-05-18": "lundi"}
+    good, bad = [], []
+    for d in TARGET_DATES:
+        period = periods_by_date[d]["day"]
+        if not period:
+            continue
+        sf = period.get("shortForecast", "").lower()
+        precip = estimate_precip_percent(sf, period.get("detailedForecast", ""))
+        try:
+            precip_num = int(precip.rstrip("%")) if "%" in precip else 0
+        except ValueError:
+            precip_num = 0
+        wet = any(w in sf for w in ["rain", "shower", "storm", "thunder", "drizzle"])
+        sunny = any(w in sf for w in ["sunny", "clear"])
+        label = day_names_fr.get(d, d)
+        if wet or precip_num >= 50:
+            bad.append(label)
+        elif sunny and precip_num < 30:
+            good.append(label)
+    if good and bad:
+        return f"plage/playground prioritaire {' et '.join(good)}, focus indoor {' et '.join(bad)}."
+    if good and not bad:
+        return f"plage/playground OK les {len(good)} jours."
+    if bad and not good:
+        return f"plan B indoor (restos, musees, AllPlay) {' et '.join(bad)} — verifier le matin."
+    return "verifier la meteo le matin avant de fixer plage vs indoor."
+
+
 def build_weather_table(periods_by_date):
     """Build HTML table for our 3 trip days."""
     rows = []
@@ -223,7 +253,7 @@ def build_weather_table(periods_by_date):
     return "\n".join(rows)
 
 
-def update_html(table_html):
+def update_html(table_html, periods_by_date):
     """Replace weather table and last-update timestamp in index.html."""
     html = INDEX_PATH.read_text(encoding="utf-8")
 
@@ -257,6 +287,15 @@ def update_html(table_html):
         flags=re.DOTALL,
     )
 
+    # Implication concrete (dynamic)
+    impl = compute_implication(periods_by_date)
+    new_html = re.sub(
+        r"<!-- IMPLICATION_START -->.*?<!-- IMPLICATION_END -->",
+        f"<!-- IMPLICATION_START -->{impl}<!-- IMPLICATION_END -->",
+        new_html,
+        flags=re.DOTALL,
+    )
+
     INDEX_PATH.write_text(new_html, encoding="utf-8")
     print(f"Updated index.html with NWS forecast at {update_label}")
 
@@ -280,7 +319,7 @@ def main():
             else:
                 print(f"  {date}: not yet in NWS 7-day forecast window")
         table_html = build_weather_table(periods_by_date)
-        update_html(table_html)
+        update_html(table_html, periods_by_date)
     except Exception as e:
         print(f"Error fetching weather: {e}")
         # Don't fail the workflow on transient API issues
