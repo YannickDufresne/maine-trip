@@ -1,0 +1,38 @@
+name: Generate PDF from index.html
+on:
+  workflow_run:
+    workflows: ["Update weather forecast"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Install WeasyPrint
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libcairo2
+          pip install weasyprint
+      - name: Generate PDF
+        run: |
+          echo "IiIiR2VuZXJhdGUgbWFpbmUtdHJpcC1ib29rLnBkZiBmcm9tIGN1cnJlbnQgaW5kZXguaHRtbCB1c2luZyBXZWFzeVByaW50LgpTdHJpcHMgdGhlIHBhc3N3b3JkIGdhdGUsIHRoZSBzdGlja3kgdG9wYmFyLCBhbmQgYWRkcyBwcmludC1mcmllbmRseSBDU1MuIiIiCmltcG9ydCByZQppbXBvcnQgb3MKZnJvbSB3ZWFzeXByaW50IGltcG9ydCBIVE1MCgp3aXRoIG9wZW4oJ2luZGV4Lmh0bWwnLCBlbmNvZGluZz0ndXRmLTgnKSBhcyBmOgogICAgaHRtbCA9IGYucmVhZCgpCgojIFN0cmlwIHBhc3N3b3JkIGdhdGUgb3ZlcmxheSArIGl0cyBpbmxpbmUgc2NyaXB0Cmh0bWwgPSByZS5zdWIocic8IS0tIFBhc3N3b3JkIGdhdGUgLS0+Lio/PC9zY3JpcHQ+JywgJycsIGh0bWwsIGZsYWdzPXJlLkRPVEFMTCkKCiMgU3RyaXAgdGhlIHN0aWNreSB0b3AgYmFyIChpdCBoYXMgdGhlIExBU1RfVVBEQVRFIG1hcmtlciB0aGF0CiMgd2UgcmVwbGljYXRlZCBpbnNpZGUgbGUgd2VhdGhlciBiYW5uZXIgYWxyZWFkeSkKaHRtbCA9IHJlLnN1YigKICAgIHInPCEtLSBUb3Agc3RpY2t5IGJhciB3aXRoIGxhc3QgdXBkYXRlZCAtLT4uKj88IS0tIENPVkVSIC0tPicsCiAgICAnPCEtLSBDT1ZFUiAtLT4nLAogICAgaHRtbCwKICAgIGZsYWdzPXJlLkRPVEFMTCwKKQoKIyBCb2R5LmxvY2tlZCBjbGFzcyBvbmx5IG1hdHRlcnMgZm9yIHRoZSBnYXRlIHdoaWNoIGlzIG5vdyBnb25lCmh0bWwgPSBodG1sLnJlcGxhY2UoJzxib2R5IGNsYXNzPSJsb2NrZWQiPicsICc8Ym9keT4nKQoKIyBJbmplY3QgcHJpbnQtZnJpZW5kbHkgQ1NTIChwYWdlIHNpemUsIGF2b2lkIGJyZWFraW5nIGNhcmRzIGFjcm9zcyBwYWdlcykKcHJpbnRfY3NzID0gJycnCkBwYWdlIHsgc2l6ZTogbGV0dGVyOyBtYXJnaW46IDEuNWNtOyB9CmJvZHkgeyBmb250LXNpemU6IDEwcHQ7IH0KLmRheS1jYXJkLCAubXVzdC1pdGVtLCAuc3RlYWwtYm94LCAuaW5zdC1jYXJkIHsgcGFnZS1icmVhay1pbnNpZGU6IGF2b2lkOyB9CmgyIHsgcGFnZS1icmVhay1hZnRlcjogYXZvaWQ7IH0KLnRvcGJhciwgI2dhdGUgeyBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7IH0KJycnCmh0bWwgPSBodG1sLnJlcGxhY2UoJzwvc3R5bGU+JywgcHJpbnRfY3NzICsgJzwvc3R5bGU+JykKCndpdGggb3BlbignL3RtcC9wcmludC5odG1sJywgJ3cnLCBlbmNvZGluZz0ndXRmLTgnKSBhcyBmOgogICAgZi53cml0ZShodG1sKQoKSFRNTCgnL3RtcC9wcmludC5odG1sJywgYmFzZV91cmw9Jy4nKS53cml0ZV9wZGYoJ21haW5lLXRyaXAtYm9vay5wZGYnKQpwcmludCgnUERGIGdlbmVyYXRlZCwgc2l6ZTonLCBvcy5wYXRoLmdldHNpemUoJ21haW5lLXRyaXAtYm9vay5wZGYnKSwgJ2J5dGVzJyk=" | base64 -d > /tmp/gen.py
+          python3 /tmp/gen.py
+      - name: Commit PDF if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add maine-trip-book.pdf
+          if git diff --cached --quiet; then
+            echo "No PDF changes"
+          else
+            git commit -m "chore: regenerate PDF from index.html"
+            git push
+          fi
